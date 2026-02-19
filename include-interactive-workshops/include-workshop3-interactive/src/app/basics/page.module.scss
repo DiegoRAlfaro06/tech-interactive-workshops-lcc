@@ -38,7 +38,7 @@
 
 .pokemonCards {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -59,9 +59,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.pokemonImage {
-  width: 96px;
-  height: 96px;
+.itemImage {
+  width: 60px;
+  height: 60px;
   margin-bottom: 0.5rem;
 }
 

@@ -1,6 +1,7 @@
 import styles from "./page.module.scss";
 import Link from "next/link";
 // TODO: Import your pokemon data here!
+
 import { team } from "../../data/pokemonData";
 
 export default function BasicsPage() {
@@ -21,6 +22,13 @@ export default function BasicsPage() {
             </div>
 			))}
         */}
+        {team.map((item) => (
+            <div key={item.id} className={styles.card}>
+              <img src={item.image} alt={item.name} className={styles.itemImage} />
+              <h3>{ item.name }</h3>
+              <p>Type: { item.type } </p>
+            </div>
+          ))}
       </div>
 
       <div className={styles.buttonGroup}>
