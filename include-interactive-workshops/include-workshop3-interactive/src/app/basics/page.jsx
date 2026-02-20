@@ -14,13 +14,24 @@ export default function BasicsPage() {
 
         {/* Example skeleton:
           {yourData.map((item) => (
-            <div key={ *unique key* } className={styles.card}>
+            <div key={ *unique key/id* } className={styles.card}>
               <img src={ *item.image* } alt={ *item.name* } className={styles.pokemonImage} />
               <h3>{ *item.name* }</h3>
               <p>Type: { *item.type* }</p>
             </div>
 			))}
         */}
+        {team.map((items) => (
+          <div key={items.id} className={styles.card}>
+            <img
+              src={items.image}
+              alt={items.name}
+              className={styles.pokemonImage}
+            />
+            <h3>{items.name}</h3>
+            <p>Type: {items.type}</p>
+          </div>
+        ))}
       </div>
 
       <div className={styles.buttonGroup}>

@@ -5,6 +5,7 @@ import { team } from "../../data/pokemonData";
 export default function PokemonPage() {
   // *Insert team type filter here!*
   // const *Insert pokemon type variable!* = *Insert .filter function here!* => pokemon.type === ["*Insert type here*"]
+  const electricType = team.filter((items) => items.type === "Electric");
 
   return (
     <main className={styles.container}>
@@ -25,6 +26,18 @@ export default function PokemonPage() {
             </div>
 			))}
         */}
+
+          {team.map((items) => (
+            <div key={items.id} className={styles.card}>
+              <img
+                src={items.image}
+                alt={items.name}
+                className={styles.pokemonImage}
+              />
+              <h3>{items.name}</h3>
+              <p>Category: {items.type}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -44,6 +57,17 @@ export default function PokemonPage() {
             </div>
 			))}
         */}
+          {electricType.map((items) => (
+            <div key={items.id} className={styles.card}>
+              <img
+                src={items.image}
+                alt={items.name}
+                className={styles.pokemonImage}
+              />
+              <h3>{items.name}</h3>
+              <p>Category: {items.type}</p>
+            </div>
+          ))}
         </div>
       </section>
 
