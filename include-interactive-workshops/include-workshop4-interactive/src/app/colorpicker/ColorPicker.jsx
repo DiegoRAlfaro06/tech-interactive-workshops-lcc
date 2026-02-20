@@ -6,6 +6,9 @@ import "./ColorPicker.scss";
 import ColorButton from "./ColorButton";
 
 export default function ColorPicker() {
+
+  const [bg, setBg] = useState("white");
+
   // Step 1: Create a piece of state to track background color.
   // Example: const [bg, setBg] = useState("white");
 
@@ -17,11 +20,14 @@ export default function ColorPicker() {
   //   { name: "Green", hex: "#34d399" },
   //   { name: "Yellow", hex: "#fbbf24" },
   // ];
+  const palette = [
+    { name: "Aqua", hex: "#00FFFF" },
+    { name: "Maroon", hex: "#800000" },
+    { name: "Amber", hex: "#FFBF00" },
+  ];
 
   // Temporary fallback so the page runs before we fill in code.
   // You can remove these after adding your useState and palette above.
-  const bg = "white";
-  const palette = [];
 
   return (
     <div className="color-picker" style={{ backgroundColor: bg }}>
@@ -36,6 +42,10 @@ export default function ColorPicker() {
             <ColorButton key={c.name} color={c.hex} onPick={setBg} />
           ))}
       */}
+      {palette.map((c) => (
+        <ColorButton key={c.name} color={c.hex} onPick={setBg} />
+      ))}
+
 
       <div className="nav-links">
         <Link href="/" className="nav-btn home">
