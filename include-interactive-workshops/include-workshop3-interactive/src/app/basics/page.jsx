@@ -12,15 +12,15 @@ export default function BasicsPage() {
       <div className={styles.data}>
         {/* TODO: Use .map() on your imported data */}
 
-        {/* Example skeleton:
-          {yourData.map((item) => (
-            <div key={ *unique key* } className={styles.card}>
-              <img src={ *item.image* } alt={ *item.name* } className={styles.pokemonImage} />
-              <h3>{ *item.name* }</h3>
-              <p>Type: { *item.type* }</p>
+        {
+          team.map((pokemon) => (
+            <div key={ pokemon.id } className={styles.card}>
+              <img src={ pokemon.image } alt={ pokemon.name } className={styles.pokemonImage} />
+              <h3>{ pokemon.name }</h3>
+              <p>Type: { pokemon.type }</p>
             </div>
-			))}
-        */}
+			    ))
+        }
       </div>
 
       <div className={styles.buttonGroup}>

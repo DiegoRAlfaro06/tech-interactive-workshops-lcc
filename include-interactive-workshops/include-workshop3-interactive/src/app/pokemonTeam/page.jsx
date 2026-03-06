@@ -5,6 +5,7 @@ import { team } from "../../data/pokemonData";
 export default function PokemonPage() {
   // *Insert team type filter here!*
   // const *Insert pokemon type variable!* = *Insert .filter function here!* => pokemon.type === ["*Insert type here*"]
+  const WaterTeam = team.filter((pokemon) => pokemon.type == "Water");
 
   return (
     <main className={styles.container}>
@@ -16,15 +17,15 @@ export default function PokemonPage() {
         <div className={styles.pokemonCards}>
           {/*Insert .map function here!*/}
 
-          {/* Example skeleton:
-          {yourData.map((item) => (
-            <div key={ *unique key* } className={styles.card}>
-              <img src={ *item.image* } alt={ *item.name* } className={styles.pokemonImage} />
-              <h3>{ *item.name* }</h3>
-              <p>Category: { *item.category* }</p>
-            </div>
-			))}
-        */}
+          {
+            team.map((pokemon) => (
+              <div key={ pokemon.id } className={styles.card}>
+                <img src={ pokemon.image } alt={ pokemon.name } className={styles.pokemonImage} />
+                <h3>{ pokemon.name }</h3>
+                <p>Type: { pokemon.type }</p>
+              </div>
+			      ))
+          }
         </div>
       </section>
 
@@ -35,15 +36,15 @@ export default function PokemonPage() {
         <div className={styles.pokemonCards}>
           {/*Insert .map function here!*/}
 
-          {/* Example skeleton:
-          {yourData.map((item) => (
-            <div key={ *unique key* } className={styles.card}>
-              <img src={ *item.image* } alt={ *item.name* } className={styles.pokemonImage} />
-              <h3>{ *item.name* }</h3>
-              <p>Category: { *item.category* }</p>
-            </div>
-			))}
-        */}
+          {
+            WaterTeam.map((pokemon) => (
+              <div key={ pokemon.id } className={styles.card}>
+                <img src={ pokemon.image } alt={ pokemon.name } className={styles.pokemonImage} />
+                <h3>{ pokemon.name }</h3>
+                <p>Type: { pokemon.type }</p>
+              </div>
+			      ))
+          }
         </div>
       </section>
 
