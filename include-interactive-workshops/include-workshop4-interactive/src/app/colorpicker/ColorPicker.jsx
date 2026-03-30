@@ -7,21 +7,15 @@ import ColorButton from "./ColorButton";
 
 export default function ColorPicker() {
   // Step 1: Create a piece of state to track background color.
-  // Example: const [bg, setBg] = useState("white");
+  const [bg, setBg] = useState("white");
 
   // Step 2: Define your palette array of colors (name + hex value).
-  // Example:
-  // const palette = [
-  //   { name: "Red", hex: "#f87171" },
-  //   { name: "Blue", hex: "#60a5fa" },
-  //   { name: "Green", hex: "#34d399" },
-  //   { name: "Yellow", hex: "#fbbf24" },
-  // ];
-
-  // Temporary fallback so the page runs before we fill in code.
-  // You can remove these after adding your useState and palette above.
-  const bg = "white";
-  const palette = [];
+  const palette = [
+    { name: "Red", hex: "#f87171" },
+    { name: "Blue", hex: "#60a5fa" },
+    { name: "Green", hex: "#34d399" },
+    { name: "Yellow", hex: "#fbbf24" },
+  ];
 
   return (
     <div className="color-picker" style={{ backgroundColor: bg }}>
@@ -31,11 +25,9 @@ export default function ColorPicker() {
       </p>
 
       {/* Step 3: Map through your palette and render a ColorButton for each color. */}
-      {/* Example:
-          {palette.map((c) => (
-            <ColorButton key={c.name} color={c.hex} onPick={setBg} />
-          ))}
-      */}
+      {palette.map((c) => (
+        <ColorButton key={c.name} color={c.hex} onPick={setBg} />
+      ))}
 
       <div className="nav-links">
         <Link href="/" className="nav-btn home">
